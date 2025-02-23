@@ -5,6 +5,6 @@ import { getCoupon } from "../controllers/coupon.controller";
 const couponRouter = Router();
 
 couponRouter.get("/", protectRoute, getCoupon);
-couponRouter.get();
+couponRouter.get("/validate", protectRoute, validateCoupon);
 
 export default couponRouter;
