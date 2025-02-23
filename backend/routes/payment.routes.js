@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { protectedRoute } from "../middlewares/auth.middlewares.js";
+import { protectRoute } from "../middlewares/auth.middleware.js";
 import {
   checkoutSuccess,
   createCheckoutSession,
@@ -9,10 +9,10 @@ const paymentRouter = Router();
 
 paymentRouter.post(
   "/create-checkout-session",
-  protectedRoute,
+  protectRoute,
   createCheckoutSession
 );
 
-paymentRouter.post("/checkout-success", protectedRoute, checkoutSuccess);
+paymentRouter.post("/checkout-success", protectRoute, checkoutSuccess);
 
 export default paymentRouter;
